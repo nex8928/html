@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration Form</title>
+</head>
+<body>
+    <form id="userForm" method="POST">
+        <table>
+            <tr>
+                <td>First Name :</td>
+                <td><input type="text" id="firstName" name="firstName" required 
+                           pattern="[A-Za-z]+" title="Only alphabets allowed" 
+                           placeholder="Please enter your first name" style="background-color: yellow;"></td>
+            </tr>
+            
+            <tr>
+                <td>Last Name :</td>
+                <td><input type="text" id="lastName" name="lastName" required 
+                           pattern="[A-Za-z]+" title="Only alphabets allowed" 
+                           placeholder="Please enter your last name" style="background-color: yellow;"></td>
+            </tr>
+            
+            <tr>
+                <td>Gender :</td>
+                <td>
+                    <input type="radio" name="gender" value="male" required> Male
+                    <input type="radio" name="gender" value="female" required> Female
+                    <input type="radio" name="gender" value="others" required> Others
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Languages known :</td>
+                <td>
+                    <input type="checkbox" name="languages" value="html" required> HTML
+                    <input type="checkbox" name="languages" value="css" required> CSS
+                    <input type="checkbox" name="languages" value="js" required> JS
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Address :</td>
+                <td>
+                    <select id="address" name="address" required>
+                        <option value="">Select Address</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="mysore">Mysore</option>
+                        <option value="kerala">Kerala</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Cities lived in:</td>
+                <td><input type="text" id="citiesLived" name="citiesLived" value="Chennai" required></td>
+            </tr>
+            
+            <tr>
+                <td>Contact Number :</td>
+                <td><input type="tel" id="contactNumber" name="contactNumber" required 
+                           pattern="[0-9]{10}" title="Enter 10 digit contact number"></td>
+            </tr>
+            
+            <tr>
+                <td>My favorite color is :</td>
+                <td><input type="color" id="favoriteColor" name="favoriteColor" required></td>
+            </tr>
+            
+            <tr>
+                <td>Date is :</td>
+                <td><input type="date" id="date" name="date" required placeholder="mm/dd/yyyy"></td>
+            </tr>
+            
+            <tr>
+                <td>Birthday is :</td>
+                <td><input type="date" id="birthday" name="birthday" required placeholder="mm/dd/yyyy"></td>
+            </tr>
+            
+            <tr>
+                <td>Time is :</td>
+                <td><input type="time" id="time" name="time" required></td>
+            </tr>
+            
+            <tr>
+                <td>Week is :</td>
+                <td><input type="week" id="week" name="week" required></td>
+            </tr>
+            
+            <tr>
+                <td>Month is :</td>
+                <td><input type="month" id="month" name="month" required></td>
+            </tr>
+            
+            <tr>
+                <td>Email id is :</td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2">
+                    <button type="button" onclick="showMessage()">Click Me</button>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        // Validation functions
+        function validateName(input) {
+            const namePattern = /^[A-Za-z]+$/;
+            return namePattern.test(input.value);
+        }
+
+        function validateContact(input) {
+            const contactPattern = /^[0-9]{10}$/;
+            return contactPattern.test(input.value);
+        }
+
+        function validateEmail(input) {
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailPattern.test(input.value);
+        }
+
+        // Click Me button function
+        function showMessage() {
+            alert("Button clicked!");
+        }
+
+        // Form submission handler
+        document.getElementById("userForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            const firstName = document.getElementById("firstName");
+            const lastName = document.getElementById("lastName");
+            const contact = document.getElementById("contactNumber");
+            const email = document.getElementById("email");
+            
+            let isValid = true;
+            
+            if (!validateName(firstName)) {
+                alert("First name should contain only alphabets");
+                isValid = false;
+            }
+            if (!validateName(lastName)) {
+                alert("Last name should contain only alphabets");
+                isValid = false;
+            }
+            if (!validateContact(contact)) {
+                alert("Contact number should be exactly 10 digits");
+                isValid = false;
+            }
+            if (!validateEmail(email)) {
+                alert("Please enter a valid email address");
+                isValid = false;
+            }
+            
+            // Check if at least one language is selected
+            const languages = document.querySelectorAll("input[name='languages']:checked");
+            if (languages.length === 0) {
+                alert("Please select at least one language");
+                isValid = false;
+            }
+            
+            // Check if gender is selected
+            const gender = document.querySelector("input[name='gender']:checked");
+            if (!gender) {
+                alert("Please select gender");
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Show welcome message and redirect
+                alert("Welcome User!");
+                // You can redirect to welcome page here
+                // window.location.href = "welcome.html";
+            }
+        });
+    </script>
+</body>
+</html>
