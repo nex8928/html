@@ -83,6 +83,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -99,11 +100,11 @@
         min-height: 60vh;
         text-align: center;
     }
-    
+
     .display-4 {
         font-size: 2.5rem;
     }
-    
+
     .hero-section .col-lg-6:first-child {
         margin-bottom: 2rem;
     }
@@ -137,7 +138,9 @@ footer a:hover {
 
 .shadow-sm:hover {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-}/* Fo
+}
+
+/* Fo
 rm Styles */
 .account-type-card .form-check-input {
     position: absolute;
@@ -154,7 +157,7 @@ rm Styles */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.account-type-card input:checked + label .card {
+.account-type-card input:checked+label .card {
     border-color: var(--sc-green) !important;
     background-color: var(--sc-light-green) !important;
 }
@@ -205,12 +208,15 @@ rm Styles */
         transform: scale(0.3);
         opacity: 0;
     }
+
     50% {
         transform: scale(1.05);
     }
+
     70% {
         transform: scale(0.9);
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -226,13 +232,13 @@ rm Styles */
     .card-body {
         padding: 2rem !important;
     }
-    
+
     .account-type-card .card-body {
         padding: 1rem;
     }
-}/
-* Testimonials Section */
-.testimonial-card {
+}
+
+/ * Testimonials Section */ .testimonial-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
 }
@@ -275,6 +281,7 @@ rm Styles */
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -309,7 +316,7 @@ rm Styles */
         top: -5px;
         left: 15px;
     }
-    
+
     .stat-number h2 {
         font-size: 2.5rem;
     }
@@ -318,8 +325,10 @@ rm Styles */
 /* Add subtle background pattern to testimonials section */
 .testimonials-bg {
     background-image: radial-gradient(circle at 20% 80%, rgba(0, 166, 81, 0.05) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 20%, rgba(0, 166, 81, 0.05) 0%, transparent 50%);
-}/* Add
+        radial-gradient(circle at 80% 20%, rgba(0, 166, 81, 0.05) 0%, transparent 50%);
+}
+
+/* Add
  Testimonial Button */
 .btn-outline-success:hover {
     transform: translateY(-2px);
@@ -357,12 +366,12 @@ rm Styles */
 }
 
 .rating-input label:hover,
-.rating-input label:hover ~ label,
-.rating-input input[type="radio"]:checked ~ label {
+.rating-input label:hover~label,
+.rating-input input[type="radio"]:checked~label {
     color: #ffc107;
 }
 
-.rating-input input[type="radio"]:checked ~ label {
+.rating-input input[type="radio"]:checked~label {
     color: #ffc107;
 }
 
@@ -417,11 +426,13 @@ rm Styles */
     .modal-dialog {
         margin: 1rem;
     }
-    
+
     .rating-input label {
         font-size: 1.2rem;
     }
-}/* Save
+}
+
+/* Save
 d Accounts Section */
 .account-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -464,6 +475,7 @@ d Accounts Section */
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -489,12 +501,12 @@ d Accounts Section */
     .account-card .card-body {
         padding: 1rem;
     }
-    
+
     .account-card .d-flex.gap-2 {
         flex-direction: column;
         gap: 0.5rem !important;
     }
-    
+
     .account-card .btn-sm {
         width: 100%;
     }
@@ -514,4 +526,254 @@ d Accounts Section */
 #accountsCount {
     font-weight: bold;
     color: var(--sc-green);
+}
+
+/* Cashba
+ck & Offers Section */
+.offer-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.offer-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 166, 81, 0.2) !important;
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--sc-green), var(--sc-dark-green));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.offer-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Offer Badges */
+.offer-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cashback-card .offer-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+}
+
+.interest-card .offer-badge {
+    background: linear-gradient(135deg, #4834d4, #686de0);
+    color: white;
+}
+
+.rewards-card .offer-badge {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+}
+
+.fee-waiver-card .offer-badge {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+/* Offer Icons */
+.offer-icon {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.offer-icon i {
+    transition: all 0.3s ease;
+}
+
+.offer-card:hover .offer-icon i {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--sc-dark-green) !important;
+}
+
+/* Offer Percentage */
+.offer-percentage {
+    position: relative;
+}
+
+.offer-percentage::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sc-green), var(--sc-dark-green));
+    border-radius: 2px;
+}
+
+/* Offer Details */
+.offer-details {
+    padding: 0.5rem 1rem;
+    background: var(--sc-light-green);
+    border-radius: 25px;
+    margin-top: auto;
+    transition: all 0.3s ease;
+}
+
+.offer-card:hover .offer-details {
+    background: var(--sc-green);
+    color: white;
+    transform: scale(1.05);
+}
+
+.offer-card:hover .offer-details small {
+    color: white !important;
+}
+
+/* Card Specific Styling */
+.cashback-card:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 36, 0.1));
+}
+
+.interest-card:hover {
+    background: linear-gradient(135deg, rgba(72, 52, 212, 0.1), rgba(104, 109, 224, 0.1));
+}
+
+.rewards-card:hover {
+    background: linear-gradient(135deg, rgba(243, 156, 18, 0.1), rgba(230, 126, 34, 0.1));
+}
+
+.fee-waiver-card:hover {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.1), rgba(192, 57, 43, 0.1));
+}
+
+/* Benefits Banner */
+.benefits-banner {
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--sc-green), var(--sc-dark-green));
+    box-shadow: 0 10px 30px rgba(0, 166, 81, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.benefits-banner:hover {
+    transform: translateY(-3px);
+}
+
+.benefits-banner h4 {
+    font-weight: 600;
+}
+
+.benefits-banner p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Card Content Styling */
+.offer-card .card-title {
+    color: var(--sc-dark-green);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.offer-card .card-text {
+    color: #6c757d;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.offer-card:hover .card-title {
+    color: var(--sc-green);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .offer-card {
+        margin-bottom: 2rem;
+    }
+
+    .offer-badge {
+        top: 10px;
+        right: 10px;
+        padding: 3px 8px;
+        font-size: 0.6rem;
+    }
+
+    .offer-percentage span {
+        font-size: 2.5rem;
+    }
+
+    .benefits-banner {
+        text-align: center;
+    }
+
+    .benefits-banner .col-md-4 {
+        margin-top: 1rem;
+    }
+}
+
+/* Animation for cards on scroll */
+@keyframes bounceInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.offer-card {
+    animation: bounceInUp 0.6s ease-out;
+}
+
+.offer-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.offer-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.offer-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.offer-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Pulse effect for percentages */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.offer-card:hover .offer-percentage span {
+    animation: pulse 1s infinite;
 }

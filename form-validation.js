@@ -223,7 +223,7 @@ function displaySavedAccounts() {
                                 <h6 class="text-success mb-2">Account Details</h6>
                                 <p class="mb-1"><strong>Type:</strong> ${account.accountType.charAt(0).toUpperCase() + account.accountType.slice(1)} Account</p>
                                 <p class="mb-1"><strong>Purpose:</strong> ${account.purpose.charAt(0).toUpperCase() + account.purpose.slice(1)}</p>
-                                <p class="mb-1"><strong>Initial Deposit:</strong> $${parseFloat(account.initialDeposit).toLocaleString()}</p>
+                                <p class="mb-1"><strong>Initial Deposit:</strong> ₹${parseFloat(account.initialDeposit).toLocaleString()}</p>
                                 <p class="mb-1"><strong>Occupation:</strong> ${account.occupation}</p>
                                 <p class="mb-2"><strong>Income Range:</strong> ${getIncomeRangeText(account.income)}</p>
                             </div>
@@ -256,11 +256,11 @@ function displaySavedAccounts() {
 // Get income range text
 function getIncomeRangeText(incomeValue) {
     const incomeRanges = {
-        'under25k': 'Under $25,000',
-        '25k-50k': '$25,000 - $50,000',
-        '50k-100k': '$50,000 - $100,000',
-        '100k-250k': '$100,000 - $250,000',
-        'over250k': 'Over $250,000'
+        'under25k': 'Under ₹25,00,000',
+        '25k-50k': '₹25,00,000 - ₹50,00,000',
+        '50k-100k': '₹50,00,000 - ₹1,00,00,000',
+        '100k-250k': '₹1,00,00,000 - ₹2,50,00,000',
+        'over250k': 'Over ₹2,50,00,000'
     };
     return incomeRanges[incomeValue] || incomeValue;
 }
@@ -301,7 +301,7 @@ function viewAccountDetails(index) {
                                     <tr><td><strong>Purpose:</strong></td><td>${account.purpose.charAt(0).toUpperCase() + account.purpose.slice(1)}</td></tr>
                                     <tr><td><strong>Occupation:</strong></td><td>${account.occupation}</td></tr>
                                     <tr><td><strong>Income:</strong></td><td>${getIncomeRangeText(account.income)}</td></tr>
-                                    <tr><td><strong>Initial Deposit:</strong></td><td>$${parseFloat(account.initialDeposit).toLocaleString()}</td></tr>
+                                    <tr><td><strong>Initial Deposit:</strong></td><td>₹${parseFloat(account.initialDeposit).toLocaleString()}</td></tr>
                                     <tr><td><strong>Status:</strong></td><td><span class="badge bg-warning">${account.status}</span></td></tr>
                                     <tr><td><strong>Applied:</strong></td><td>${new Date(account.timestamp).toLocaleString()}</td></tr>
                                 </table>
@@ -358,7 +358,7 @@ function showSuccessMessage() {
                 <i class="fas fa-info-circle me-2"></i>
                 <strong>Account ID:</strong> ${latestAccount.id}<br>
                 <strong>Account Type:</strong> ${latestAccount.accountType.charAt(0).toUpperCase() + latestAccount.accountType.slice(1)} Account<br>
-                <strong>Initial Deposit:</strong> $${parseFloat(latestAccount.initialDeposit).toLocaleString()}
+                <strong>Initial Deposit:</strong> ₹${parseFloat(latestAccount.initialDeposit).toLocaleString()}
             </div>
             <div class="alert alert-info">
                 <i class="fas fa-clock me-2"></i>
