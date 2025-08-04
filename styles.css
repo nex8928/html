@@ -889,4 +889,32 @@ d Chartered Logo Styling */
     .features-section img {
         height: 350px;
     }
+}/* Incre
+ase Digital Banking section image size specifically */
+.py-5.bg-light img {
+    height: 320px !important;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.18);
+}
+
+.py-5.bg-light img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 25px 55px rgba(0, 0, 0, 0.25);
+}
+
+/* Mobile responsive for Digital Banking image */
+@media (max-width: 768px) {
+    .py-5.bg-light img {
+        height: 320px !important;
+        margin-bottom: 2rem;
+    }
+}
+
+/* Tablet responsive for Digital Banking image */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .py-5.bg-light img {
+        height: 420px !important;
+    }
 }
