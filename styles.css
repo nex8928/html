@@ -776,4 +776,52 @@ ck & Offers Section */
 
 .offer-card:hover .offer-percentage span {
     animation: pulse 1s infinite;
+}/
+* Simple testimonials styling for beginners */
+.testimonial-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Star ratings */
+.fas.fa-star.text-warning {
+    color: #ffc107 !important;
+}
+
+.far.fa-star.text-warning {
+    color: #ddd !important;
+}
+
+/* Customer stats */
+.stat-number h2 {
+    color: var(--sc-green);
+    font-weight: bold;
+}
+
+/* Testimonial text */
+.testimonial-card .card-text {
+    font-style: italic;
+    color: #666;
+}
+
+/* Customer avatar */
+.testimonial-card img {
+    border: 2px solid var(--sc-green);
+}
+
+/* Edit and delete buttons */
+.testimonial-card .btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+/* Background for testimonials section */
+.testimonials-bg {
+    background-color: #f8f9fa;
 }
