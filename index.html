@@ -163,7 +163,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="py-5 testimonials-bg"></section>
+        <section class="py-5 testimonials-bg">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center mb-5">
@@ -273,8 +273,84 @@
                     </div>
                 </div>
             </div>
+            
+            <!-- Add Testimonial Button -->
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#testimonialModal">
+                        <i class="fas fa-plus-circle me-2"></i>Share Your Experience
+                    </button>
+                    <p class="text-muted mt-2 small">Help others discover the Standard Chartered difference</p>
+                </div>
+            </div>
         </div>
         </section>
+
+        <!-- Testimonial Modal -->
+        <div class="modal fade" id="testimonialModal" tabindex="-1" aria-labelledby="testimonialModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-white">
+                        <h5 class="modal-title" id="testimonialModalLabel">
+                            <i class="fas fa-star me-2"></i>Share Your Experience
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-4">
+                        <form id="testimonialForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="customerName" class="form-label">Your Name</label>
+                                    <input type="text" class="form-control" id="customerName" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="customerLocation" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="customerLocation" placeholder="City, Country" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="customerTitle" class="form-label">Your Title/Profession</label>
+                                    <input type="text" class="form-control" id="customerTitle" placeholder="e.g., Business Owner, Engineer" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="rating" class="form-label">Rating</label>
+                                    <div class="rating-input">
+                                        <input type="radio" name="rating" id="star5" value="5" required>
+                                        <label for="star5"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star4" value="4">
+                                        <label for="star4"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star3" value="3">
+                                        <label for="star3"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star2" value="2">
+                                        <label for="star2"><i class="fas fa-star"></i></label>
+                                        <input type="radio" name="rating" id="star1" value="1">
+                                        <label for="star1"><i class="fas fa-star"></i></label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="testimonialText" class="form-label">Your Experience</label>
+                                    <textarea class="form-control" id="testimonialText" rows="4" placeholder="Tell us about your experience with Standard Chartered..." required></textarea>
+                                    <div class="form-text">Share what you love most about our services</div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="publishConsent" required>
+                                        <label class="form-check-label" for="publishConsent">
+                                            I consent to Standard Chartered publishing this testimonial on their website and marketing materials
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-success" id="submitTestimonial">
+                            <i class="fas fa-paper-plane me-2"></i>Submit Testimonial
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- CTA Section -->
         <section class="py-5 bg-success text-white">
@@ -350,6 +426,7 @@
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="testimonial.js"></script>
 </body>
 
 </html>
