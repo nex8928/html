@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nominee Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #6c757d;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .progress-step.active {
+            background-color: #198754;
+        }
+
+        .progress-step.completed {
+            background-color: #198754;
+        }
+
+        .progress-line {
+            height: 2px;
+            background-color: #dee2e6;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .progress-line.completed {
+            background-color: #198754;
+        }
+
+        .form-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <!-- Header -->
+                <div class="text-center mb-4">
+                    <h2 class="mb-0">NOMINEE DETAILS</h2>
+                </div>
+
+                <!-- Form Container -->
+                <div class="form-container">
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nominee Name</label>
+                                <input type="text" class="form-control" placeholder="Enter nominee name">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nominee DOB</label>
+                                <input type="date" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-8">
+                                <label class="form-label">Relationship with Account Holder</label>
+                                <select class="form-select">
+                                    <option selected>Select relationship</option>
+                                    <option value="spouse">Spouse</option>
+                                    <option value="child">Child</option>
+                                    <option value="parent">Parent</option>
+                                    <option value="sibling">Sibling</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nominee Mobile Number</label>
+                                <input type="tel" class="form-control" placeholder="Enter mobile number">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nominee Email ID</label>
+                                <input type="email" class="form-control" placeholder="Enter email address">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nominee PAN Number</label>
+                                <input type="text" class="form-control" placeholder="Enter PAN number">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Allocation Preference</label>
+                                <input type="number" class="form-control" placeholder="Enter percentage" min="0"
+                                    max="100">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-8">
+                                <label class="form-label">Nominee Address</label>
+                                <textarea class="form-control" rows="3" placeholder="Enter nominee address"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nominee Identity</label>
+                                <select class="form-select">
+                                    <option selected>Select identity type</option>
+                                    <option value="aadhar">Aadhar Card</option>
+                                    <option value="passport">Passport</option>
+                                    <option value="driving_license">Driving License</option>
+                                    <option value="voter_id">Voter ID</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Nominee Last 4 Digit Details</label>
+                                <input type="text" class="form-control" placeholder="Enter last 4 digits" maxlength="4">
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="nomineeMinor">
+                                    <label class="form-check-label" for="nomineeMinor">
+                                        Nominee is Minor
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreeStatement">
+                                    <label class="form-check-label" for="agreeStatement">
+                                        I agree to include the nominee in account statement
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="button" class="btn btn-dark px-4">Save and Next</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>""
