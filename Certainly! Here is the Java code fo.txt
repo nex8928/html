@@ -1,0 +1,187 @@
+Certainly\! Here is the Java code for all the exercises listed in your "Module 1 Hands-on" session. Each program is self-contained and written to be clear and easy to understand.
+
+-----
+
+### 1\. Program to Display Table of 10
+
+This program uses a simple `for` loop to print the multiplication table of 10, from 1 to 10.
+
+```java
+public class MultiplicationTable {
+
+    public static void main(String[] args) {
+        
+        int tableOf = 10;
+        
+        System.out.println("Multiplication Table for " + tableOf);
+        System.out.println("--------------------");
+
+        // Loop from 1 to 10
+        for (int i = 1; i <= 10; i++) {
+            // Calculate the result
+            int result = tableOf * i;
+            
+            // Print it in a nice format
+            System.out.println(tableOf + " x " + i + " = " + result);
+        }
+    }
+}
+```
+
+**Explanation:** The code iterates from `i = 1` to `10`. In each step, it calculates `10 * i` and prints the equation and the result.
+
+-----
+
+### 2\. Program to Display Fibonacci Series
+
+The Fibonacci series is a sequence where each number is the sum of the two preceding ones. The standard series starts with 0 and 1.
+
+**Note:** The series in your image `(0,0,1,1,2,3,5,8,13,21)` is a bit unusual. The standard Fibonacci sequence for the first 10 numbers is `0, 1, 1, 2, 3, 5, 8, 13, 21, 34`. The code below generates this standard version.
+
+```java
+public class FibonacciSeries {
+
+    public static void main(String[] args) {
+
+        int count = 10; // How many numbers of the series to display
+        int num1 = 0;   // The first number in the series
+        int num2 = 1;   // The second number in the series
+
+        System.out.println("First " + count + " numbers of the Fibonacci Series:");
+
+        // Loop 'count' times to generate the series
+        for (int i = 1; i <= count; i++) {
+            
+            System.out.print(num1 + " ");
+
+            // Calculate the next number in the series
+            int sumOfPrevTwo = num1 + num2;
+            
+            // Update the numbers for the next iteration
+            num1 = num2;
+            num2 = sumOfPrevTwo;
+        }
+        System.out.println();
+    }
+}
+```
+
+**Explanation:** We start with `num1 = 0` and `num2 = 1`. Inside the loop, we print `num1`. Then, we calculate the next number (`sumOfPrevTwo`) and update `num1` and `num2` to get them ready for the next cycle.
+
+-----
+
+### 3\. Program to Check if a Number is Odd or Even
+
+This program uses the modulo operator (`%`) to check for a remainder when dividing by 2. If there's no remainder, the number is even.
+
+```java
+public class OddOrEven {
+
+    public static void main(String[] args) {
+
+        int numberToCheck = 27; // You can change this number
+
+        // The modulo operator (%) gives the remainder of a division.
+        // If a number divided by 2 has a remainder of 0, it's even.
+        if (numberToCheck % 2 == 0) {
+            System.out.println(numberToCheck + " is an EVEN number.");
+        } else {
+            System.out.println(numberToCheck + " is an ODD number.");
+        }
+    }
+}
+```
+
+**Explanation:** The condition `numberToCheck % 2 == 0` checks if `numberToCheck` is perfectly divisible by 2. The `if-else` statement then prints the appropriate message.
+
+-----
+
+### 4\. Program to Find the Largest of Two Numbers
+
+A simple `if-else` statement is perfect for comparing two numbers and finding which one is larger.
+
+```java
+public class LargestOfTwo {
+
+    public static void main(String[] args) {
+
+        int num1 = 45;
+        int num2 = 120;
+
+        System.out.println("Comparing the numbers " + num1 + " and " + num2 + ".");
+
+        if (num1 > num2) {
+            System.out.println("The largest number is: " + num1);
+        } else if (num2 > num1) {
+            System.out.println("The largest number is: " + num2);
+        } else {
+            System.out.println("Both numbers are equal.");
+        }
+    }
+}
+```
+
+**Explanation:** The code first checks if `num1` is greater than `num2`. If not, it checks if `num2` is greater than `num1`. If neither is true, they must be equal.
+
+-----
+
+### 5\. Program to Sort an Array
+
+The easiest way to sort an array in Java is to use the built-in `Arrays.sort()` method.
+
+```java
+import java.util.Arrays; // We need to import this to use the sort method
+
+public class SortArray {
+
+    public static void main(String[] args) {
+        
+        int[] numbers = {42, 18, 5, 25, 10, 7};
+
+        // Display the original array
+        System.out.println("Original array: " + Arrays.toString(numbers));
+        
+        // Use the built-in sort method
+        Arrays.sort(numbers);
+        
+        // Display the sorted array
+        System.out.println("Sorted array:   " + Arrays.toString(numbers));
+    }
+}
+```
+
+**Explanation:** We create an array of numbers. We use `Arrays.toString()` for a clean way to print the array's contents. The line `Arrays.sort(numbers);` automatically sorts the array in ascending order.
+
+-----
+
+### 6\. Program to Display an Array in Reverse Order
+
+This program reads the array from its last element to its first, printing each one as it goes.
+
+```java
+public class ReverseArray {
+
+    public static void main(String[] args) {
+        
+        int[] numbers = {10, 25, 5, 42, 18, 7};
+
+        // Display the original array first
+        System.out.print("Original array: ");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+        System.out.println(); // Newline
+
+        // Display the array in reverse
+        System.out.print("Reversed array: ");
+        
+        // We loop backwards, from the last index to the first (index 0)
+        for (int i = numbers.length - 1; i >= 0; i--) {
+            System.out.print(numbers[i] + " ");
+        }
+        System.out.println(); // Newline
+    }
+}
+```
+
+**Explanation:** The reverse loop starts its counter `i` at the last index (`numbers.length - 1`). It continues as long as `i` is a valid index (`i >= 0`) and counts down (`i--`) with each step.
